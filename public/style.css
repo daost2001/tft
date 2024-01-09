@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  /* New styles for the left placement */
+  .hex-board-container {
+    display: flex;
+    align-items: flex-start;
+  }
+  .hex-board {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .hex-cell {
+    position: relative;
+    width: 90px; /* Adjust the width of each hexagon */
+    height: 100px; /* Adjust the height of each hexagon */
+    margin: 0 2px 4px 0; /* Adjust the margin to create spacing */
+    margin-right: 5px;
+    background-color: #413a3a; /* Adjust the background color of each hexagon */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    border: 1px solid #ffffff;
+  }
+  .hex-cell.last {
+    visibility: hidden; /* Hide the last hexagonal cell in the first row */
+  }
+  .champions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  
+  .champion-box {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 8px; /* Adjust the padding */
+    margin: 8px; /* Adjust the margin */
+    width: 60px; /* Adjust the width */
+    height: 80px; /* Adjust the height */
+    text-align: center;
+    overflow: hidden; /* Hide the overflowing content */
+    cursor: pointer; /* Add cursor style for clickable elements */
+    user-select: none;
+  }
+  
+  .champion-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 4px; /* Adjust the margin bottom */
+  }
+  
+  .champion-box h2 {
+    font-size: 12px; /* Adjust the font size */
+    margin-bottom: 4px; /* Adjust the margin bottom */
+    margin-top: 4px; /* Adjust the margin bottom */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display an ellipsis (...) for long text */
+  }
+  
+  .champion-box p {
+    font-size: 10px; /* Adjust the font size */
+    margin: 0;
+  }
+  .traits-column {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 200px;
+    height: 420px;
+    margin-right: 50px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+  }
+
+  .trait {
+    margin: 8px;
+    display: flex;
+  }
+  .trait img {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    background-size: contain;
+    margin-right: 5px;
+    background-color: #413a3a; /* Adjust the background color of each hexagon */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    border: 5px solid #413a3a;
+    /* Add any additional styles */
+  }
+  .trait span {
+    display: flex;
+    align-items: center
+  }
+  .page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .trait.goal-reached-1 {
+    color: #CD7F32/* Your color for level 1 */;
+    font-weight: bold;
+  }
+  
+  .trait.goal-reached-2 {
+    color: #c0c0c0/* Your color for level 2 */;
+    font-weight: bold;
+  }
+  
+  .trait.goal-reached-3 {
+    color: #FFD700/* Your color for level 3 */;
+    font-weight: bold;
+  }
+  .trait.goal-reached-3 {
+    color: #FFD700/* Your color for level 3 */;
+    font-weight: bold;
+  }
+  .recommendationsList {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 200px;
+    height: 420px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+  }
+  .recommendationsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
