@@ -1,11 +1,16 @@
+
+
 body {
-    font-family: Arial, sans-serif;
     margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
+    background-image: url("images/Background.jpg");
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    font-family: "myFirstFont";
+    overflow: hidden;
+}
   h1 {
     color: #333;
   }
@@ -13,6 +18,11 @@ body {
   .hex-board-container {
     display: flex;
     align-items: flex-start;
+    background-color: #0D2B50;
+    padding: 5px 50px 5px 50px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .hex-board {
     display: flex;
@@ -28,7 +38,6 @@ body {
     margin-right: 5px;
     background-color: #413a3a; /* Adjust the background color of each hexagon */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    border: 1px solid #ffffff;
   }
   .hex-cell.last {
     visibility: hidden; /* Hide the last hexagonal cell in the first row */
@@ -36,7 +45,13 @@ body {
   .champions-container {
     display: flex;
     flex-wrap: wrap;
+    width: 60%;
+    height: 40vh;
     justify-content: left;
+    overflow-y: scroll;
+    background-color: #0D2B50;
+    margin-top: 50px;
+    padding: 5px 0px 5px 50px;
   }
   
   .champion-box {
@@ -50,6 +65,8 @@ body {
     overflow: hidden; /* Hide the overflowing content */
     cursor: pointer; /* Add cursor style for clickable elements */
     user-select: none;
+    background-color: #413a3a;
+    font-family: 'Montserrat', sans-serif;
   }
   
   .champion-box img {
@@ -65,11 +82,13 @@ body {
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflowing text */
     text-overflow: ellipsis; /* Display an ellipsis (...) for long text */
+    color: #ffffff;
   }
   
   .champion-box p {
     font-size: 10px; /* Adjust the font size */
     margin: 0;
+    color: #ffffff;
   }
   .traits-column {
     display: flex;
@@ -77,9 +96,9 @@ body {
     align-items: left;
     width: 200px;
     height: 420px;
-    margin-right: 50px;
     border: 1px solid #ccc;
     overflow-y: scroll;
+    background-color: #0D2B50;
   }
 
   .trait {
@@ -131,9 +150,21 @@ body {
     height: 420px;
     border: 1px solid #ccc;
     overflow-y: scroll;
+    background-color: #0D2B50;
   }
   .recommendationsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  .traits-column-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+
   }
