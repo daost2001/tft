@@ -1,5 +1,21 @@
+::-webkit-scrollbar{
+  width: 1em;
 
-
+}
+::-webkit-scrollbar-track{
+  background: hwb(220 22% 73%);
+  border-radius: 100vw;
+  margin-block: .5em;
+  margin-left: 10em;
+}
+::-webkit-scrollbar-thumb{
+  background: hsl(219, 89%, 20%);
+  border: .2em solid hwb(220 22% 73%);;
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: hsl(219, 89%, 15%);
+}
 body {
     margin: 40px;
     display: flex;
