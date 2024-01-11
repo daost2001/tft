@@ -110,6 +110,7 @@ hexBoard.addEventListener('mousedown', (event) => {
 
     if (hexCell && hexCell.hasChildNodes()) {
         draggedElement = hexCell.firstChild;
+        draggedElement.style.visibility = 'visible';
         originalHex = hexCell;
 
         draggedElement.style.position = 'absolute';
@@ -148,10 +149,9 @@ function handleMouseUp(event) {
 
     if (draggedElement) {
         const hoveredHex = event.target.closest('.hex-cell');
-
+        const championTraits = draggedElement.querySelector('p').textContent.split(', ');
+        const championClass = draggedElement.querySelector('h2').textContent;
         document.body.removeChild(draggedElement);
-
-        
 
         if (hoveredHex && !hoveredHex.hasChildNodes() && originalHex !== hoveredHex) {
             originalHex.style.backgroundImage = hoveredHex.style.backgroundImage
@@ -179,14 +179,24 @@ function handleMouseUp(event) {
             document.addEventListener('mousemove', handleMouseMove);
             document.addEventListener('mouseup', handleMouseUp);
 
+            
+        }
+        else if(hoveredHex == originalHex){
+            originalHex.appendChild(draggedElement);
+
         }
         else {
-            originalHex.appendChild(draggedElement);
+            originalHex.style.backgroundImage = null
         }
 
         draggedElement.style.position = ''; // Reset position style
         draggedElement = null;
         originalHex = null;
+        if (isLastChampionOfItsClass(championClass)) {
+            updateTraitCounts(championTraits, true);
+        }
+        updateTraitsColumn()
+        recommendChampions();
     }
 }
 
@@ -200,6 +210,7 @@ championClasses.forEach((championClass) => {
     
     // Create an image element for the champion
     const imageElement = document.createElement('img');
+    imageElement.classList.add("championImage");
     imageElement.src = `images/${championClass.name}.png`; // Adjust the path
     
     // Create a heading element for champion name
@@ -230,7 +241,7 @@ championClasses.forEach((championClass) => {
     
     // Append the champion box to the list
     championClassesList.appendChild(championBox);
-});
+})
       
 function moveChampionToHex(championBox) {
     const hexBoard = document.getElementById('hexBoard');
@@ -289,14 +300,14 @@ function removeChampionFromHex(event) {
             updateTraitCounts(championTraits, true);
         }
         updateTraitsColumn();
-        removeRecommendationsForChampion(championClass);
+
         recommendChampions();
         }
 }
 function updateTraitCounts(traits, decrease) {
     traits.forEach(trait => {
         traitCounts[trait] = (traitCounts[trait] || 0) + (decrease ? -1 : 1);
-    });
+    })
 }
 function isLastChampionOfItsClass(championClass) {
     const hexBoard = document.getElementById('hexBoard');
@@ -385,7 +396,6 @@ function recommendChampions() {
             if (nextGoal !== undefined) {
                 const championsForTrait = findChampionsForTrait(trait, nextGoal);
 
-                console.log(`Recommended for ${trait}: ${championsForTrait.join(', ')}`);
                 // Display recommendations in the list if there are champions to recommend
                 if (championsForTrait.length > 0) {
                     const recommendationItem = document.createElement('div');
@@ -398,7 +408,6 @@ function recommendChampions() {
 }
   
 function findChampionsForTrait(trait, goal) {
-    console.log(traitGoals[trait].levels);
     // Your logic to find champions based on the trait and goal
     // For example, you can search through your championClasses array
     // and return champions that have the specified trait and are not already in the hex board
@@ -411,41 +420,23 @@ function findChampionsForTrait(trait, goal) {
     const currentCount = traitCounts[trait] || 0;
     const additionalCountNeeded = goal - currentCount;
 
-    console.log(`Trait: ${trait}, Goal: ${goal}, Champions: ${champions.join(', ')}`);
     // Return all possible recommended champions if adding one more would reach the goal
     return additionalCountNeeded === 1 ? champions : [];
 }
   
-  function isChampionInHex(championName) {
+function isChampionInHex(championName) {
     // Your logic to check if a champion is already in the hex board
     // Return true if the champion is already in the hex board, otherwise false
     const hexBoard = document.getElementById('hexBoard');
     const hexCells = hexBoard.getElementsByClassName('hex-cell');
-  
+
     for (let i = 0; i < hexCells.length; i++) {
-      if (hexCells[i].firstChild && hexCells[i].firstChild.querySelector('h2').textContent === championName) {
+        if (hexCells[i].firstChild && hexCells[i].firstChild.querySelector('h2').textContent === championName) {
         return true; // The champion is already in the hex board
       }
     }
   
     return false; // The champion is not in the hex board
-  }
-  function removeRecommendationsForChampion(championClass) {
-    const recommendationsList = document.getElementById('recommendationsList');
-    const recommendationItems = recommendationsList.children;
-
-    for (let i = recommendationItems.length - 1; i >= 0; i--) {
-        const trait = recommendationItems[i].textContent.split(':')[0].trim();
-
-        // Check if the trait exists in traitGoals
-        if (trait in traitGoals) {
-            const traitChampions = findChampionsForTrait(trait, traitGoals[trait].levels[0]);
-
-            if (traitChampions.includes(championClass)) {
-                recommendationsList.removeChild(recommendationItems[i]);
-            }
-        }
-    }
 }
   
 });

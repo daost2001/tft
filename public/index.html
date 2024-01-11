@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Team Builder</title>
     <link rel="stylesheet" href="style.css">
-    <style> 
-        @font-face {
-          font-family: myFirstFont;
-          src: url(sansation_light.woff);
-        }
-        
-        body {
-          font-family: myFirstFont;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <script src="app.js"></script>
@@ -22,7 +15,7 @@
     <Div class="traits-column-container" >
         Traits 
         <div class="traits-column" id="traitsColumn">
-            Traits will be dynamically added here
+            <div class = "traitsPlaceholder">Traits will be dynamically added here</div> 
         </div>
     </Div>
         <!-- Hexagonal board with four rows -->
@@ -68,8 +61,8 @@
             </div>
         </div>
     </div>
-    <div class= "recommendationsContainer"id="recommendationsContainer">
-        <div>Recommended Champions </div>
+    <div class= "recommendationsContainer">
+        <div >Recommended Champions </div>
         <div class= "recommendationsList" id="recommendationsList"></div>
         </div>
     </div>

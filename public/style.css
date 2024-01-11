@@ -42,7 +42,6 @@ body {
   }
   .hex-board {
     display: flex;
-
     justify-content: center;
   }
 
@@ -154,8 +153,8 @@ body {
     color: #FFD700/* Your color for level 3 */;
     font-weight: bold;
   }
-  .trait.goal-reached-3 {
-    color: #FFD700/* Your color for level 3 */;
+  .trait.goal-reached-4 {
+    color: #6b7679/* Your color for level 4 */;
     font-weight: bold;
   }
   .recommendationsList {
@@ -176,6 +175,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 
   }
+  .traitsPlaceholder{
+    text-align: center;
+  }
+  
   .traits-column-container{
     display: flex;
     flex-direction: column;
