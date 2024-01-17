@@ -1,67 +1,67 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const championClasses = [
-      { name: 'Ahri', traits: ['KDA', 'Spellweaver'] },
-      { name: 'Akali KDA', traits: ['Breakout','KDA', 'Executioner'] },
-      { name: 'Akali True Damage', traits: ['Breakout','True-Damage', 'Executioner']},
-      { name: 'Amumu', traits: ['Emo', 'Guardian'] },
-      { name: 'Annie', traits: ['Emo', 'Spellweaver'] },
-      { name: 'Aphelios', traits: ['Heartsteel', 'Rapidfire'] },
-      { name: 'Bard', traits: ['Jazz', 'Dazzler'] },
-      { name: 'Blitzcrank', traits: ['Disco', 'Sentinel'] },
-      { name: 'Corki', traits: ['8-bit', 'Big-Shot'] },
-      { name: 'Caitlyn', traits: ['8-bit', 'Rapidfire'] },
-      { name: 'Ekko', traits: ['True-Damage', 'Sentinel','Spellweaver' ] },
-      { name: 'Evelynn', traits: ['KDA', 'Crowd-Diver'] },
-      { name: 'Ezreal', traits: ['Heartsteel', 'Big-Shot'] },
-      { name: 'Garen', traits: ['8-bit', 'Sentinel'] },
-      { name: 'Gnar', traits: ['Pentakill','Mosher', 'Superfan'] },
-      { name: 'Gragas', traits: ['Disco','Bruiser', 'Spellweaver']},
-      { name: 'Illaoi', traits: ['ILLBEATS', 'Bruiser'] },
-      { name: 'Jax', traits: ['EDM', 'Mosher'] },
-      { name: 'Jhin', traits: ['Maestro', 'Big-Shot'] },
-      { name: 'Jinx', traits: ['Punk', 'Rapidfire'] },
-      { name: "Ksante", traits: ['Heartsteel', 'Sentinel'] },
-      { name: "Kaisa", traits: ['KDA', 'Big-Shot'] },
-      { name: 'Karthus', traits: ['Pentakill', 'Executioner' ] },
-      { name: 'Katarina', traits: ['Country', 'Crowd-Diver'] },
-      { name: 'Kayle', traits: ['Pentakill', 'Edgelord'] },
-      { name: 'Kayn', traits: ['Heartsteel', 'Wildcard', 'Edgelord'] },
-      { name: 'Kennen', traits: ['True-Damage','Guardian', 'Superfan'] },
-      { name: 'Lillia', traits: ['KDA','Sentinel', 'Superfan']},
-      { name: 'Lucian', traits: ['Jazz', 'Rapidfire'] },
-      { name: 'Lulu', traits: ['Hyperpop', 'Spellweaver'] },
-      { name: 'Lux', traits: ['EDM', 'Dazzler'] },
-      { name: 'Miss Fortune', traits: ['Jazz', 'Big-Shot'] },
-      { name: 'Mordekaiser', traits: ['Pentakill', 'Sentinel'] },
-      { name: 'Nami', traits: ['Disco', 'Dazzler'] },
-      { name: 'Neeko', traits: ['KDA', 'Guardian','Superfan' ] },
-      { name: 'Olaf', traits: ['Pentakill', 'Bruiser'] },
-      { name: 'Pantheon', traits: ['Punk', 'Guardian'] },
-      { name: 'Poppy', traits: ['Emo', 'Mosher'] },
-      { name: 'Qiyana', traits: ['True-Damage','Crowd-Diver'] },
-      { name: 'Riven', traits: ['8-bit','Edgelord']},
-      { name: 'Samira', traits: ['Country', 'Executioner'] },
-      { name: 'Senna', traits: ['True-Damage', 'Rapidfire'] },
-      { name: 'Seraphine', traits: ['KDA', 'Spellweaver'] },
-      { name: 'Sett', traits: ['Heartsteel', 'Bruiser', 'Mosher'] },
-      { name: "Sona", traits: ['Mixmaster', 'Spellweaver'] },
-      { name: "Tahm Kench", traits: ['Country', 'Bruiser'] },
-      { name: 'Taric', traits: ['Disco', 'Guardian'] },
-      { name: 'Thresh', traits: ['Country', 'Guardian'] },
-      { name: 'Twisted Fate', traits: ['Disco', 'Dazzler'] },
-      { name: 'Twitch', traits: ['Punk', 'Executioner'] },
-      { name: 'Urgot', traits: ['Country', 'Mosher'] },
-      { name: 'Vex', traits: ['Emo', 'Executioner'] },
-      { name: "Vi", traits: ['Punk', 'Mosher'] },
-      { name: "Viego", traits: ['Pentakill', 'Edgelord'] },
-      { name: 'Yasuo', traits: ['True-Damage', 'Edgelord' ] },
-      { name: 'Yone', traits: ['Heartsteel', 'Edgelord' ,'Crowd-Diver'] },
-      { name: 'Yorick', traits: ['Pentakill', 'Mosher', 'Guardian'] },
-      { name: 'Zac', traits: ['EDM', 'Bruiser' ] },
-      { name: 'Zed', traits: ['EDM', 'Crowd-Diver'] },
-      { name: 'Ziggs', traits: ['Hyperpop', 'Dazzler'] },
-      // Add more champion classes as needed
-    ];
+const championClasses = [
+    { name: 'Ahri', traits: ['KDA', 'Spellweaver'] },
+    { name: 'Akali KDA', traits: ['Breakout','KDA', 'Executioner'] },
+    { name: 'Akali True Damage', traits: ['Breakout','True-Damage', 'Executioner']},
+    { name: 'Amumu', traits: ['Emo', 'Guardian'] },
+    { name: 'Annie', traits: ['Emo', 'Spellweaver'] },
+    { name: 'Aphelios', traits: ['Heartsteel', 'Rapidfire'] },
+    { name: 'Bard', traits: ['Jazz', 'Dazzler'] },
+    { name: 'Blitzcrank', traits: ['Disco', 'Sentinel'] },
+    { name: 'Corki', traits: ['8-bit', 'Big-Shot'] },
+    { name: 'Caitlyn', traits: ['8-bit', 'Rapidfire'] },
+    { name: 'Ekko', traits: ['True-Damage', 'Sentinel','Spellweaver' ] },
+    { name: 'Evelynn', traits: ['KDA', 'Crowd-Diver'] },
+    { name: 'Ezreal', traits: ['Heartsteel', 'Big-Shot'] },
+    { name: 'Garen', traits: ['8-bit', 'Sentinel'] },
+    { name: 'Gnar', traits: ['Pentakill','Mosher', 'Superfan'] },
+    { name: 'Gragas', traits: ['Disco','Bruiser', 'Spellweaver']},
+    { name: 'Illaoi', traits: ['ILLBEATS', 'Bruiser'] },
+    { name: 'Jax', traits: ['EDM', 'Mosher'] },
+    { name: 'Jhin', traits: ['Maestro', 'Big-Shot'] },
+    { name: 'Jinx', traits: ['Punk', 'Rapidfire'] },
+    { name: "Ksante", traits: ['Heartsteel', 'Sentinel'] },
+    { name: "Kaisa", traits: ['KDA', 'Big-Shot'] },
+    { name: 'Karthus', traits: ['Pentakill', 'Executioner' ] },
+    { name: 'Katarina', traits: ['Country', 'Crowd-Diver'] },
+    { name: 'Kayle', traits: ['Pentakill', 'Edgelord'] },
+    { name: 'Kayn', traits: ['Heartsteel', 'Wildcard', 'Edgelord'] },
+    { name: 'Kennen', traits: ['True-Damage','Guardian', 'Superfan'] },
+    { name: 'Lillia', traits: ['KDA','Sentinel', 'Superfan']},
+    { name: 'Lucian', traits: ['Jazz', 'Rapidfire'] },
+    { name: 'Lulu', traits: ['Hyperpop', 'Spellweaver'] },
+    { name: 'Lux', traits: ['EDM', 'Dazzler'] },
+    { name: 'Miss Fortune', traits: ['Jazz', 'Big-Shot'] },
+    { name: 'Mordekaiser', traits: ['Pentakill', 'Sentinel'] },
+    { name: 'Nami', traits: ['Disco', 'Dazzler'] },
+    { name: 'Neeko', traits: ['KDA', 'Guardian','Superfan' ] },
+    { name: 'Olaf', traits: ['Pentakill', 'Bruiser'] },
+    { name: 'Pantheon', traits: ['Punk', 'Guardian'] },
+    { name: 'Poppy', traits: ['Emo', 'Mosher'] },
+    { name: 'Qiyana', traits: ['True-Damage','Crowd-Diver'] },
+    { name: 'Riven', traits: ['8-bit','Edgelord']},
+    { name: 'Samira', traits: ['Country', 'Executioner'] },
+    { name: 'Senna', traits: ['True-Damage', 'Rapidfire'] },
+    { name: 'Seraphine', traits: ['KDA', 'Spellweaver'] },
+    { name: 'Sett', traits: ['Heartsteel', 'Bruiser', 'Mosher'] },
+    { name: "Sona", traits: ['Mixmaster', 'Spellweaver'] },
+    { name: "Tahm Kench", traits: ['Country', 'Bruiser'] },
+    { name: 'Taric', traits: ['Disco', 'Guardian'] },
+    { name: 'Thresh', traits: ['Country', 'Guardian'] },
+    { name: 'Twisted Fate', traits: ['Disco', 'Dazzler'] },
+    { name: 'Twitch', traits: ['Punk', 'Executioner'] },
+    { name: 'Urgot', traits: ['Country', 'Mosher'] },
+    { name: 'Vex', traits: ['Emo', 'Executioner'] },
+    { name: "Vi", traits: ['Punk', 'Mosher'] },
+    { name: "Viego", traits: ['Pentakill', 'Edgelord'] },
+    { name: 'Yasuo', traits: ['True-Damage', 'Edgelord' ] },
+    { name: 'Yone', traits: ['Heartsteel', 'Edgelord' ,'Crowd-Diver'] },
+    { name: 'Yorick', traits: ['Pentakill', 'Mosher', 'Guardian'] },
+    { name: 'Zac', traits: ['EDM', 'Bruiser' ] },
+    { name: 'Zed', traits: ['EDM', 'Crowd-Diver'] },
+    { name: 'Ziggs', traits: ['Hyperpop', 'Dazzler'] },
+    // Add more champion classes as needed
+];
 
 const traitGoals = {
     '8-bit': { levels: [2, 4, 6]},
@@ -99,8 +99,8 @@ const traitCounts = {}; // Object to store trait counts
 
 let draggedElement = null;
 let originalHex = null;
-
-
+let headlinerTrait = null;
+let headlinerChampion = null;
 
 const hexBoard = document.getElementById('hexBoard');
 
@@ -187,6 +187,10 @@ function handleMouseUp(event) {
         }
         else {
             originalHex.style.backgroundImage = null
+            if(draggedElement.querySelector('h2').textContent == headlinerChampion){
+                setHeadliner(null,null);
+            }
+            displayHeadliner();
         }
 
         draggedElement.style.position = ''; // Reset position style
@@ -248,9 +252,11 @@ function moveChampionToHex(championBox) {
     const hexCells = hexBoard.getElementsByClassName('hex-cell');
     let isChampionAlreadyPresent = false;
     const championImageSrc = championBox.querySelector('img').src;
+    const headlinerList = document.getElementById('headlinerList');
 
     // Check if the champion is already present in the hex board
     const clonedChampionBox = championBox.cloneNode(true);
+    clonedChampionBox.classList.add("hex");
     clonedChampionBox.style.visibility = 'hidden'; // Make the cloned node invisible
     Array.from(hexCells).forEach(hexCell => {
         if (hexCell.firstChild && hexCell.firstChild.isEqualNode(clonedChampionBox)) {
@@ -276,6 +282,14 @@ function moveChampionToHex(championBox) {
                     updateTraitCounts(championTraits);
                     updateTraitsColumn();
                     recommendChampions();
+                    if(!headlinerList.firstChild){
+                        displayHeadliner();
+                    }
+                    else if(headlinerList.firstChild.className == "champion-box"){
+                        displayHeadliner();
+                    }
+                    else{
+                    }
                 }
                 break;
             }
@@ -298,9 +312,13 @@ function removeChampionFromHex(event) {
         // Update trait counts when a champion is removed only if it was the last one of its class
         if (isLastChampionOfItsClass(championClass)) {
             updateTraitCounts(championTraits, true);
+            removeChampionBox(championClass)
+        }
+        if (championClass == headlinerChampion){
+            setHeadliner(null,null);
+            displayHeadliner()
         }
         updateTraitsColumn();
-
         recommendChampions();
         }
 }
@@ -339,32 +357,56 @@ function updateTraitsColumn() {
         if (traitCounts[trait] > 0) {
             const traitElement = document.createElement('div');
             traitElement.classList.add('trait');
+            traitElement.id=trait;
 
             // Determine the goal for the current trait (if applicable)
             const goal = traitGoals[trait];
-            const goalText = goal ? `${goal.levels.join('/')}` : '';
+            const goalText = goal ? `${goal.levels.join(' > ')}` : '';
 
             // Check if a goal has been reached and apply highlighting
             const highlightedGoal = goal ? getHighlightedGoal(count, goal.levels) : null;
 
             // Create an image element for the trait icon
             const traitIcon = document.createElement('img');
+            traitIcon.classList.add('traitIcon');
+            if (highlightedGoal !== null) {
+                traitIcon.classList.add(`goal-reached-${highlightedGoal}`);
+            }
             traitIcon.src = `images/${trait}.png`; // Adjust the path to your trait icons
             traitIcon.alt = trait; // Set alt text for accessibility
 
             // Create a span element for the trait name and count
-            const traitName = document.createElement('span');
-            traitName.textContent = `${trait} ${count}  (${goalText})`;
+            const traitName = document.createElement('div');
+            traitName.classList.add("trait-name")
+            traitName.textContent = `${trait}`;
 
-            if (highlightedGoal !== null) {
-                traitElement.classList.add(`goal-reached-${highlightedGoal}`);
-            }
+            const traitCount = document.createElement('div');
+            traitCount.classList.add("trait-count")
+            traitCount.textContent = ` ${count} `;
+
+            const traitText = document.createElement('div');
+            traitText.classList.add("trait-text")
+            traitText.textContent = ` ${goalText} `;
+            
+   
 
             // Append the image and span elements to the trait element
             traitElement.appendChild(traitIcon);
-            traitElement.appendChild(traitName);
+            traitElement.appendChild(traitCount);
+            const traitinfo = document.createElement('div');
+            traitinfo.classList.add("trait-info")
+            traitinfo.appendChild(traitName);
+            traitinfo.appendChild(traitText);
+            traitElement.appendChild(traitinfo);
+
+            if (trait==headlinerTrait){
+                traitElement.classList.add("headliner");
+            }
 
             traitsColumn.appendChild(traitElement);
+        }
+        if (!traitsColumn.firstChild) {
+            traitsColumn.innerHTML = '<div class = "traitsPlaceholder">Traits will be dynamically added here</div>';
         }
     });
 }
@@ -383,27 +425,36 @@ function recommendChampions() {
     // Loop through each trait in the trait column
     const traitColumn = document.getElementById('traitsColumn');
     const traitItems = traitColumn.children;
+
     for (let i = 0; i < traitItems.length; i++) {
-        const trait = traitItems[i].textContent.split(' ')[0].trim(); // Extract trait name
+        if (traitItems[i].lastChild.firstChild){
+            const trait = traitItems[i].lastChild.firstChild.innerHTML; // Extract trait name
 
-        // Check if the trait exists in traitGoals
-        if (trait in traitGoals) {
-            const currentCount = traitCounts[trait] || 0;
-            const levels = traitGoals[trait].levels;
+                // Check if the trait exists in traitGoals
+                if (trait in traitGoals) {
+                    const currentCount = traitCounts[trait] || 0;
+                    const levels = traitGoals[trait].levels;
 
-            // Check if there's a next goal and recommend champions to reach it
-            const nextGoal = levels.find(level => level > currentCount);
-            if (nextGoal !== undefined) {
-                const championsForTrait = findChampionsForTrait(trait, nextGoal);
+                    // Check if there's a next goal and recommend champions to reach it
+                    const nextGoal = levels.find(level => level > currentCount);
+                    if (nextGoal !== undefined) {
+                        const championsForTrait = findChampionsForTrait(trait, nextGoal);
 
-                // Display recommendations in the list if there are champions to recommend
-                if (championsForTrait.length > 0) {
-                    const recommendationItem = document.createElement('div');
-                    recommendationItem.innerHTML  = `${trait}: ${championsForTrait.join(', ')}<br><br>`;
-                    recommendationsList.appendChild(recommendationItem);
+                        // Display recommendations in the list if there are champions to recommend
+                        if (championsForTrait.length > 0) {
+                            const recommendationItem = document.createElement('div');
+                            recommendationItem.innerHTML  = `${trait}: ${championsForTrait.join(', ')}<br><br>`;
+                            recommendationsList.appendChild(recommendationItem);
+                        }
                 }
             }
         }
+    }
+    if (!recommendationsList.firstChild){
+        console.log("IM EMPTY")
+        console.log(recommendationsList.firstChild);
+
+        recommendationsList.innerHTML = '<div class= "recommendationsPlaceholder" >Champions will be recommended here depending on what your team needs</div>';
     }
 }
   
@@ -438,5 +489,128 @@ function isChampionInHex(championName) {
   
     return false; // The champion is not in the hex board
 }
-  
+
+
+function displayHeadliner() {
+    const championNames = championClasses.map(champion => champion.name);
+    const uniqueChampionsList = championNames.filter(championName => isChampionInHex(championName));
+    console.log(uniqueChampionsList);
+    const headliner = document.getElementById('headlinerList');
+
+    // Clear existing content
+    headliner.innerHTML = '';
+
+    // Create a champion box for each unique champion
+    uniqueChampionsList.forEach(championName => {
+        const championClass = championClasses.find(champion => champion.name === championName);
+    
+        // Create a box element for the champion
+        const championBox = document.createElement('div');
+        championBox.classList.add('champion-box');
+        championBox.id = championClass.name;
+
+        // Create an image element for the champion
+        const imageElement = document.createElement('img');
+        imageElement.classList.add("championImage");
+        imageElement.src = `images/${championClass.name}.png`; // Adjust the path
+
+        // Create a heading element for champion name
+        const nameHeading = document.createElement('h2');
+        nameHeading.textContent = championClass.name;
+
+        // Create a paragraph element for champion traits
+        const traitsParagraph = document.createElement('p');
+        traitsParagraph.textContent = `${championClass.traits.join(', ')}`;
+
+        // Add click event listener to display champion and traits
+        championBox.addEventListener('click', () => displayHeadlinerInfo(championClass));
+
+        // Append name, image, and traits to the champion box
+        championBox.appendChild(nameHeading);
+        championBox.appendChild(imageElement);
+        championBox.appendChild(traitsParagraph);
+        headliner.appendChild(championBox);
+    });
+    const headlinerContainer = document.getElementById('headlinerContainer');
+    headlinerContainer.style.overflowY="scroll";
+}
+
+// Function to remove a champion box by champion name
+function removeChampionBox(championName) {
+    const headlinerList = document.getElementById('headlinerList');
+        // Find and remove the champion box with the specified champion name
+        const championBoxToRemove = document.getElementById(championName);
+        if (championBoxToRemove) {
+            headlinerList.removeChild(championBoxToRemove);
+        }
+}
+
+function displayHeadlinerInfo(championClass) {
+    const championInfoBox = document.getElementById('headlinerList');
+    setHeadliner(null,championClass.name)
+    
+    // Clear existing content
+    championInfoBox.innerHTML = '';
+
+    const headlinerInfo = document.createElement('div');
+    headlinerInfo.classList.add("headliner-info-container");
+    championInfoBox.appendChild(headlinerInfo)
+
+        const exit = document.createElement('button');
+        exit.classList.add("headliner-exit")
+        exit.textContent = "x";
+        exit.addEventListener('click', () => displayHeadliner());
+        exit.addEventListener('click', () => setHeadliner(null,null));
+
+
+        // Create elements for champion info
+        const nameHeading = document.createElement('h2');
+        nameHeading.classList.add("headliner-name");
+        nameHeading.textContent = championClass.name;
+
+        const imageElement = document.createElement('img');
+        imageElement.classList.add("headliner-image");
+        imageElement.src = `images/${championClass.name}.png`; // Adjust the path
+
+        // Append elements to the champion info box
+        headlinerInfo.appendChild(exit);
+        headlinerInfo.appendChild(nameHeading);
+        headlinerInfo.appendChild(imageElement);
+
+        const headlinerTraits = document.createElement('div');
+        headlinerTraits.classList.add("headliner-trait-container")
+        championClass.traits.forEach(championTrait => {
+            if (championTrait!=("Breakout")&& championTrait!=("ILLBEATS") &&championTrait!=("Maestro") &&championTrait!=("Mixmaster")&&championTrait!=("Wildcard")){
+                const trait = document.createElement('p');
+                trait.classList.add("headliner-trait")
+                trait.textContent = championTrait;
+                trait.addEventListener('click', () => setHeadliner(championTrait,championClass.name));
+                headlinerTraits.appendChild(trait);
+            }
+        })
+        headlinerInfo.appendChild(headlinerTraits);
+        const headlinerContainer = document.getElementById('headlinerContainer');
+        headlinerContainer.style.overflowY="hidden";
+
+}
+
+function setHeadliner(trait,champion){
+    traitCounts[headlinerTrait] = traitCounts[headlinerTrait] -1;
+
+    headlinerTrait = null;
+    if (champion!=null){
+        headlinerChampion = champion;
+        if (trait!=null){
+            headlinerTrait = trait;
+            traitCounts[trait] = traitCounts[trait] + 1;
+            const headlinerTraitElement = document.getElementById(trait);
+        }
+    }
+    // Update the traits column on the webpage
+    updateTraitsColumn();
+    recommendChampions();
+}
+
+
+
 });

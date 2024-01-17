@@ -1,12 +1,14 @@
 ::-webkit-scrollbar{
   width: 1em;
-
+  background: #303030;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 ::-webkit-scrollbar-track{
   background: hwb(220 22% 73%);
   border-radius: 100vw;
   margin-block: .5em;
-  margin-left: 10em;
 }
 ::-webkit-scrollbar-thumb{
   background: hsl(219, 89%, 20%);
@@ -16,21 +18,84 @@
 ::-webkit-scrollbar-thumb:hover{
   background: hsl(219, 89%, 15%);
 }
-body {
+@media only screen and (max-width: 1300px) {
+  body{
+    background-size: cover!important;
+  }
+  .top-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center!important;
+    max-width: 100%;
+  }
+  .recommendationsList {
+    width: 100%!important;
+    height: 100px!important;
+  }
+  .recommendationsContainer {
+    width: 100%!important;
+  }
+  .traits-column {
+    flex-direction: row!important;
+    align-items: center!important;
+    width: 100%!important;
+    height: 100px!important;
+    overflow-y: hidden!important;
+  }
+  .traits-column-container{
+    width: 100%!important;
+  }
+  .trait {
+    max-height: 60px;
+    min-width: 200px;
+    background-color: #27282E;
+    margin: 8px;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
+    padding-left: 5px;
+  }
+  .champions-container {
+    width: 50%!important;
+  }
+  .hex-cell {
+    position: relative;
+    width: 10vw!important; /* Adjust the width of each hexagon */
+    aspect-ratio: 1/1!important;
+    height: auto!important;
+    margin: 0 2px 4px 0; /* Adjust the margin to create spacing */
+    margin-right: 5px;
+    background-color: #413a3a; /* Adjust the background color of each hexagon */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  }
+  .champion-box.hex{
+    height: 10%!important;
+  }
+  .headliner-trait-container{
+    flex-direction: column;
+  }
+  .headliner-container{
+    width: 40%!important;
+    overflow-y: scroll !important;
+  }
+}
+  body {
     margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url("images/Background.jpg");
-    background-size: 100% 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    font-family: "myFirstFont";
-    overflow: hidden;
-}
+  }
   h1 {
     color: #333;
   }
-  /* New styles for the left placement */
+  /*top half styles*/
+  .top-page-container {
+    display: flex;
+  }
+  /*Hex board styles*/
   .hex-board-container {
     display: flex;
     align-items: flex-start;
@@ -44,7 +109,6 @@ body {
     display: flex;
     justify-content: center;
   }
-
   .hex-cell {
     position: relative;
     width: 90px; /* Adjust the width of each hexagon */
@@ -57,10 +121,121 @@ body {
   .hex-cell.last {
     visibility: hidden; /* Hide the last hexagonal cell in the first row */
   }
+
+  /*Trait styles*/
+  .traits-column-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .traits-column {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 420px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    background-color: #0D2B50;
+  }
+  .traitsPlaceholder{
+    text-align: center;
+  }
+
+  .trait {
+    min-height: 60px;
+    background-color: #27282E;
+    margin: 8px;
+    display: flex;
+    border-radius: 2px;
+    align-items: center;
+    padding-left: 5px;
+  }
+  .trait.headliner {
+    border: 1px solid #FFD700;
+  }
+
+  .trait img {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    background-size: contain;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #646464; /* Adjust the background color of each hexagon */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    display: flex;
+    border: 7px solid #646464;
+    /* Add any additional styles */
+  }
+  .trait-count {
+    background-color: #413a3a;
+    width: 15px; /* Adjust the width as needed */
+    height: 25px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+  }
+  .trait-info{
+    margin-left: 5px;
+  }
+  .traitIcon.goal-reached-1 {
+    background-color: #CD7F32/* Your color for level 1 */;
+    border: 7px solid #CD7F32;
+    font-weight: bold;
+  }
+  
+  .traitIcon.goal-reached-2 {
+    background-color: #c0c0c0/* Your color for level 2 */;
+    border: 7px solid #c0c0c0;
+    font-weight: bold;
+  }
+  
+  .traitIcon.goal-reached-3 {
+    background-color: #FFD700/* Your color for level 3 */;
+    border: 7px solid #FFD700;
+    font-weight: bold;
+  }
+  .traitIcon.goal-reached-4 {
+    background-color: #6b7679/* Your color for level 4 */;
+    border: 7px solid #6b7679;
+    font-weight: bold;
+  }
+
+  /*recommendation styles*/
+  .recommendationsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .recommendationsPlaceholder{
+    text-align: center;
+  }
+  .recommendationsList {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 250px;
+    height: 420px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    background-color: #0D2B50;
+  }
+
+  /*bottom half styles*/
+  .bottom-page-container {
+    display: flex;
+    justify-content: center;
+  }
+  /*champion container styles*/
   .champions-container {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 50%;
     height: 40vh;
     justify-content: left;
     overflow-y: scroll;
@@ -68,7 +243,6 @@ body {
     margin-top: 50px;
     padding: 5px 0px 5px 50px;
   }
-  
   .champion-box {
     position: relative;
     border: 1px solid #ccc;
@@ -83,13 +257,11 @@ body {
     background-color: #413a3a;
     font-family: 'Montserrat', sans-serif;
   }
-  
   .champion-box img {
     max-width: 100%;
     height: auto;
     margin-bottom: 4px; /* Adjust the margin bottom */
   }
-  
   .champion-box h2 {
     font-size: 12px; /* Adjust the font size */
     margin-bottom: 4px; /* Adjust the margin bottom */
@@ -99,91 +271,85 @@ body {
     text-overflow: ellipsis; /* Display an ellipsis (...) for long text */
     color: #ffffff;
   }
-  
   .champion-box p {
     font-size: 10px; /* Adjust the font size */
     margin: 0;
     color: #ffffff;
   }
-  .traits-column {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    width: 200px;
-    height: 420px;
-    border: 1px solid #ccc;
-    overflow-y: scroll;
-    background-color: #0D2B50;
+  .champion-box.hex{
+    height: 60px;
+    width: 60px;
+    padding: 0;
+  }
+  .champion-box.hex h2{
+    font-size: 0%;
+    margin-bottom: 0; /* Adjust the margin bottom */
+    margin-top: 0; /* Adjust the margin bottom */
+  }
+  .champion-box.hex p{
+    font-size: 0%;
+  }
+  .champion-box.hex img{
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  .trait {
-    margin: 8px;
+  /*headliner styles*/
+  .headliner-container {
     display: flex;
-  }
-  .trait img {
-    width: 20px; /* Adjust the width as needed */
-    height: 20px; /* Adjust the height as needed */
-    background-size: contain;
-    margin-right: 5px;
-    background-color: #413a3a; /* Adjust the background color of each hexagon */
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    border: 5px solid #413a3a;
-    /* Add any additional styles */
-  }
-  .trait span {
-    display: flex;
-    align-items: center
-  }
-  .page-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .trait.goal-reached-1 {
-    color: #CD7F32/* Your color for level 1 */;
-    font-weight: bold;
-  }
-  
-  .trait.goal-reached-2 {
-    color: #c0c0c0/* Your color for level 2 */;
-    font-weight: bold;
-  }
-  
-  .trait.goal-reached-3 {
-    color: #FFD700/* Your color for level 3 */;
-    font-weight: bold;
-  }
-  .trait.goal-reached-4 {
-    color: #6b7679/* Your color for level 4 */;
-    font-weight: bold;
-  }
-  .recommendationsList {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    width: 200px;
-    height: 420px;
-    border: 1px solid #ccc;
+    flex-wrap: wrap;
+    width: 20%;
+    height: 40vh;
+    justify-content: left;
     overflow-y: scroll;
     background-color: #0D2B50;
+    margin-top: 50px;
+    margin-left: 34px;
+    padding: 5px 0px 5px 5px;
   }
-  .recommendationsContainer {
+  .headliner-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  .headliner-info-container{
     display: flex;
     flex-direction: column;
+    width: 100%;
     align-items: center;
-    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-
+    color:white
   }
-  .traitsPlaceholder{
+  .headliner-trait-container{
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .headliner-image{
+    width: 50%;
+    height: auto;
+  }
+  .headliner-trait{
+    display: flex;
+    height: 25px;
+    width: 120px;
+    margin-left: 5px;
+    border: solid white;
+    background-color: #27282E;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer; 
+    
+  }
+  .headliner-exit{
+    float: right;
+  }
+  .headliner-name{
     text-align: center;
   }
-  
-  .traits-column-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
 
-  }
+
+  

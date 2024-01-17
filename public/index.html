@@ -11,62 +11,69 @@
 </head>
 <body>
     <script src="app.js"></script>
-    <div class="page-container">
-    <Div class="traits-column-container" >
-        Traits 
-        <div class="traits-column" id="traitsColumn">
-            <div class = "traitsPlaceholder">Traits will be dynamically added here</div> 
+    <div class="top-page-container">
+        <div class="traits-column-container" >
+            Traits 
+            <div class="traits-column" id="traitsColumn">
+                <div class = "traitsPlaceholder">Traits will be dynamically added here</div> 
+            </div>
         </div>
-    </Div>
-        <!-- Hexagonal board with four rows -->
-    <div class="hex-board-container">
-        <div id="hexBoard"> 
-            <div class="hex-board">
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell last"></div>
+            <!-- Hexagonal board with four rows -->
+        <div class="hex-board-container">
+            <div id="hexBoard"> 
+                <div class="hex-board">
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell last"></div>
+                </div>
+                <div class="hex-board">
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                </div>
+                <div class="hex-board">
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell last"></div>
+                </div>
+                <div class="hex-board">
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                    <div class="hex-cell"></div>
+                </div>
             </div>
-            <div class="hex-board">
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-            </div>
-            <div class="hex-board">
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell last"></div>
-            </div>
-            <div class="hex-board">
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
-                <div class="hex-cell"></div>
+        </div>
+        <div class= "recommendationsContainer">
+            <div >Recommended Champions </div>
+            <div class= "recommendationsList" id="recommendationsList">
+                <div class= "recommendationsPlaceholder" id="recommendationsPlaceholder" >Champions will be recommended here depending on what your team needs</div>
             </div>
         </div>
     </div>
-    <div class= "recommendationsContainer">
-        <div >Recommended Champions </div>
-        <div class= "recommendationsList" id="recommendationsList"></div>
+    <div class="bottom-page-container">
+        <div class="champions-container" id="championClassesList"></div>
+        <div class="headliner-container" id="headlinerContainer">
+            <div class="headliner-list" id="headlinerList"></div>
         </div>
     </div>
-    <div class="champions-container" id="championClassesList"></div>
 </body>
       
 
