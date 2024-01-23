@@ -1,65 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
 const championClasses = [
-    { name: 'Ahri', traits: ['KDA', 'Spellweaver'] },
-    { name: 'Akali KDA', traits: ['Breakout','KDA', 'Executioner'] },
-    { name: 'Akali True Damage', traits: ['Breakout','True-Damage', 'Executioner']},
-    { name: 'Amumu', traits: ['Emo', 'Guardian'] },
-    { name: 'Annie', traits: ['Emo', 'Spellweaver'] },
-    { name: 'Aphelios', traits: ['Heartsteel', 'Rapidfire'] },
-    { name: 'Bard', traits: ['Jazz', 'Dazzler'] },
-    { name: 'Blitzcrank', traits: ['Disco', 'Sentinel'] },
-    { name: 'Corki', traits: ['8-bit', 'Big-Shot'] },
-    { name: 'Caitlyn', traits: ['8-bit', 'Rapidfire'] },
-    { name: 'Ekko', traits: ['True-Damage', 'Sentinel','Spellweaver' ] },
-    { name: 'Evelynn', traits: ['KDA', 'Crowd-Diver'] },
-    { name: 'Ezreal', traits: ['Heartsteel', 'Big-Shot'] },
-    { name: 'Garen', traits: ['8-bit', 'Sentinel'] },
-    { name: 'Gnar', traits: ['Pentakill','Mosher', 'Superfan'] },
-    { name: 'Gragas', traits: ['Disco','Bruiser', 'Spellweaver']},
-    { name: 'Illaoi', traits: ['ILLBEATS', 'Bruiser'] },
-    { name: 'Jax', traits: ['EDM', 'Mosher'] },
-    { name: 'Jhin', traits: ['Maestro', 'Big-Shot'] },
-    { name: 'Jinx', traits: ['Punk', 'Rapidfire'] },
-    { name: "Ksante", traits: ['Heartsteel', 'Sentinel'] },
-    { name: "Kaisa", traits: ['KDA', 'Big-Shot'] },
-    { name: 'Karthus', traits: ['Pentakill', 'Executioner' ] },
-    { name: 'Katarina', traits: ['Country', 'Crowd-Diver'] },
-    { name: 'Kayle', traits: ['Pentakill', 'Edgelord'] },
-    { name: 'Kayn', traits: ['Heartsteel', 'Wildcard', 'Edgelord'] },
-    { name: 'Kennen', traits: ['True-Damage','Guardian', 'Superfan'] },
-    { name: 'Lillia', traits: ['KDA','Sentinel', 'Superfan']},
-    { name: 'Lucian', traits: ['Jazz', 'Rapidfire'] },
-    { name: 'Lulu', traits: ['Hyperpop', 'Spellweaver'] },
-    { name: 'Lux', traits: ['EDM', 'Dazzler'] },
-    { name: 'Miss Fortune', traits: ['Jazz', 'Big-Shot'] },
-    { name: 'Mordekaiser', traits: ['Pentakill', 'Sentinel'] },
-    { name: 'Nami', traits: ['Disco', 'Dazzler'] },
-    { name: 'Neeko', traits: ['KDA', 'Guardian','Superfan' ] },
-    { name: 'Olaf', traits: ['Pentakill', 'Bruiser'] },
-    { name: 'Pantheon', traits: ['Punk', 'Guardian'] },
-    { name: 'Poppy', traits: ['Emo', 'Mosher'] },
-    { name: 'Qiyana', traits: ['True-Damage','Crowd-Diver'] },
-    { name: 'Riven', traits: ['8-bit','Edgelord']},
-    { name: 'Samira', traits: ['Country', 'Executioner'] },
-    { name: 'Senna', traits: ['True-Damage', 'Rapidfire'] },
-    { name: 'Seraphine', traits: ['KDA', 'Spellweaver'] },
-    { name: 'Sett', traits: ['Heartsteel', 'Bruiser', 'Mosher'] },
-    { name: "Sona", traits: ['Mixmaster', 'Spellweaver'] },
-    { name: "Tahm Kench", traits: ['Country', 'Bruiser'] },
-    { name: 'Taric', traits: ['Disco', 'Guardian'] },
-    { name: 'Thresh', traits: ['Country', 'Guardian'] },
-    { name: 'Twisted Fate', traits: ['Disco', 'Dazzler'] },
-    { name: 'Twitch', traits: ['Punk', 'Executioner'] },
-    { name: 'Urgot', traits: ['Country', 'Mosher'] },
-    { name: 'Vex', traits: ['Emo', 'Executioner'] },
-    { name: "Vi", traits: ['Punk', 'Mosher'] },
-    { name: "Viego", traits: ['Pentakill', 'Edgelord'] },
-    { name: 'Yasuo', traits: ['True-Damage', 'Edgelord' ] },
-    { name: 'Yone', traits: ['Heartsteel', 'Edgelord' ,'Crowd-Diver'] },
-    { name: 'Yorick', traits: ['Pentakill', 'Mosher', 'Guardian'] },
-    { name: 'Zac', traits: ['EDM', 'Bruiser' ] },
-    { name: 'Zed', traits: ['EDM', 'Crowd-Diver'] },
-    { name: 'Ziggs', traits: ['Hyperpop', 'Dazzler'] },
+    { name: 'Ahri', traits: ['KDA', 'Spellweaver'] ,cost: "4"},
+    { name: 'Akali KDA', traits: ['Breakout','KDA', 'Executioner'] ,cost: "4"},
+    { name: 'Akali True Damage', traits: ['Breakout','True-Damage', 'Executioner'],cost: "4"},
+    { name: 'Amumu', traits: ['Emo', 'Guardian'] ,cost: "3" },
+    { name: 'Annie', traits: ['Emo', 'Spellweaver'] ,cost: "1" },
+    { name: 'Aphelios', traits: ['Heartsteel', 'Rapidfire'] ,cost: "2" },
+    { name: 'Bard', traits: ['Jazz', 'Dazzler'] ,cost: "2" },
+    { name: 'Blitzcrank', traits: ['Disco', 'Sentinel'],cost: "4" },
+    { name: 'Corki', traits: ['8-bit', 'Big-Shot'],cost: "1"  },
+    { name: 'Caitlyn', traits: ['8-bit', 'Rapidfire'],cost: "4" },
+    { name: 'Ekko', traits: ['True-Damage', 'Sentinel','Spellweaver' ] ,cost: "3" },
+    { name: 'Evelynn', traits: ['KDA', 'Crowd-Diver'] ,cost: "1" },
+    { name: 'Ezreal', traits: ['Heartsteel', 'Big-Shot'],cost: "4" },
+    { name: 'Garen', traits: ['8-bit', 'Sentinel'] ,cost: "2" },
+    { name: 'Gnar', traits: ['Pentakill','Mosher', 'Superfan'] ,cost: "2" },
+    { name: 'Gragas', traits: ['Disco','Bruiser', 'Spellweaver'],cost: "2" },
+    { name: 'Illaoi', traits: ['ILLBEATS', 'Bruiser'] ,cost: "5" },
+    { name: 'Jax', traits: ['EDM', 'Mosher'] ,cost: "2" },
+    { name: 'Jhin', traits: ['Maestro', 'Big-Shot'],cost: "5"  },
+    { name: 'Jinx', traits: ['Punk', 'Rapidfire'] ,cost: "1" },
+    { name: "Ksante", traits: ['Heartsteel', 'Sentinel'] ,cost: "1" },
+    { name: "Kaisa", traits: ['KDA', 'Big-Shot'] ,cost: "2" },
+    { name: 'Karthus', traits: ['Pentakill', 'Executioner' ],cost: "4" },
+    { name: 'Katarina', traits: ['Country', 'Crowd-Diver'],cost: "2"  },
+    { name: 'Kayle', traits: ['Pentakill', 'Edgelord'] ,cost: "2" },
+    { name: 'Kayn', traits: ['Heartsteel', 'Wildcard', 'Edgelord'],cost: "5"  },
+    { name: 'Kennen', traits: ['True-Damage','Guardian', 'Superfan'] ,cost: "1" },
+    { name: 'Lillia', traits: ['KDA','Sentinel', 'Superfan'],cost: "1" },
+    { name: 'Lucian', traits: ['Jazz', 'Rapidfire'],cost: "5"  },
+    { name: 'Lulu', traits: ['Hyperpop', 'Spellweaver'],cost: "3"  },
+    { name: 'Lux', traits: ['EDM', 'Dazzler'],cost: "3"  },
+    { name: 'Miss Fortune', traits: ['Jazz', 'Big-Shot'],cost: "3"  },
+    { name: 'Mordekaiser', traits: ['Pentakill', 'Sentinel'],cost: "3"  },
+    { name: 'Nami', traits: ['Disco', 'Dazzler'] ,cost: "1" },
+    { name: 'Neeko', traits: ['KDA', 'Guardian','Superfan' ],cost: "3"  },
+    { name: 'Olaf', traits: ['Pentakill', 'Bruiser'] ,cost: "1" },
+    { name: 'Pantheon', traits: ['Punk', 'Guardian'] ,cost: "2" },
+    { name: 'Poppy', traits: ['Emo', 'Mosher'],cost: "4" },
+    { name: 'Qiyana', traits: ['True-Damage','Crowd-Diver'] ,cost: "5" },
+    { name: 'Riven', traits: ['8-bit','Edgelord'],cost: "3" },
+    { name: 'Samira', traits: ['Country', 'Executioner'],cost: "3"  },
+    { name: 'Senna', traits: ['True-Damage', 'Rapidfire'] ,cost: "2" },
+    { name: 'Seraphine', traits: ['KDA', 'Spellweaver'] ,cost: "2" },
+    { name: 'Sett', traits: ['Heartsteel', 'Bruiser', 'Mosher'],cost: "3"  },
+    { name: "Sona", traits: ['Mixmaster', 'Spellweaver'] ,cost: "5" },
+    { name: "Tahm Kench", traits: ['Country', 'Bruiser'] ,cost: "1" },
+    { name: 'Taric', traits: ['Disco', 'Guardian'] ,cost: "1" },
+    { name: 'Thresh', traits: ['Country', 'Guardian'] ,cost: "4"},
+    { name: 'Twisted Fate', traits: ['Disco', 'Dazzler'],cost: "4" },
+    { name: 'Twitch', traits: ['Punk', 'Executioner'],cost: "2"  },
+    { name: 'Urgot', traits: ['Country', 'Mosher'] ,cost: "3" },
+    { name: 'Vex', traits: ['Emo', 'Executioner'],cost: "3"  },
+    { name: "Vi", traits: ['Punk', 'Mosher'] ,cost: "1" },
+    { name: "Viego", traits: ['Pentakill', 'Edgelord'],cost: "4" },
+    { name: 'Yasuo', traits: ['True-Damage', 'Edgelord' ] ,cost: "1" },
+    { name: 'Yone', traits: ['Heartsteel', 'Edgelord' ,'Crowd-Diver'],cost: "3"  },
+    { name: 'Yorick', traits: ['Pentakill', 'Mosher', 'Guardian'] ,cost: "5" },
+    { name: 'Zac', traits: ['EDM', 'Bruiser' ],cost: "4" },
+    { name: 'Zed', traits: ['EDM', 'Crowd-Diver'],cost: "4" },
+    { name: 'Ziggs', traits: ['Hyperpop', 'Dazzler'],cost: "5" },
     // Add more champion classes as needed
 ];
 
@@ -101,6 +101,39 @@ let draggedElement = null;
 let originalHex = null;
 let headlinerTrait = null;
 let headlinerChampion = null;
+
+
+// Display champion classes on the webpage
+const championClassesList = document.getElementById('championList');  
+orderByName()
+const filterBar = document.getElementById("champions-filter");
+
+const nameFilter = document.createElement('div');
+nameFilter.classList.add("filter")
+nameFilter.classList.add("highlight")
+nameFilter.innerText = "Name"
+nameFilter.addEventListener('click', () => orderByName());
+
+
+const costFilter = document.createElement('div');
+costFilter.classList.add("filter")
+costFilter.innerText = "Cost"
+costFilter.addEventListener('click', () => orderByCost());
+
+const originFilter = document.createElement('div');
+originFilter.classList.add("filter")
+originFilter.innerText = "Origin"
+originFilter.addEventListener('click', () => orderByOrigin());
+
+const classFilter = document.createElement('div');
+classFilter.classList.add("filter")
+classFilter.innerText = "Class"
+classFilter.addEventListener('click', () => orderByClass());
+
+filterBar.appendChild(nameFilter)
+filterBar.appendChild(costFilter)
+filterBar.appendChild(originFilter)
+filterBar.appendChild(classFilter)
 
 const hexBoard = document.getElementById('hexBoard');
 
@@ -154,6 +187,8 @@ function handleMouseUp(event) {
         document.body.removeChild(draggedElement);
 
         if (hoveredHex && !hoveredHex.hasChildNodes() && originalHex !== hoveredHex) {
+            originalHex.style.cursor = null
+            hoveredHex.style.cursor = "pointer"
             originalHex.style.backgroundImage = hoveredHex.style.backgroundImage
             hoveredHex.appendChild(draggedElement);
             hoveredHex.addEventListener('contextmenu', removeChampionFromHex);
@@ -186,6 +221,7 @@ function handleMouseUp(event) {
 
         }
         else {
+            originalHex.style.cursor = null
             originalHex.style.backgroundImage = null
             if(draggedElement.querySelector('h2').textContent == headlinerChampion){
                 setHeadliner(null,null);
@@ -203,49 +239,6 @@ function handleMouseUp(event) {
         recommendChampions();
     }
 }
-
-// Display champion classes on the webpage
-const championClassesList = document.getElementById('championClassesList');
-  
-championClasses.forEach((championClass) => {
-    // Create a box element for each champion
-    const championBox = document.createElement('div');
-    championBox.classList.add('champion-box');
-    
-    // Create an image element for the champion
-    const imageElement = document.createElement('img');
-    imageElement.classList.add("championImage");
-    imageElement.src = `images/${championClass.name}.png`; // Adjust the path
-    
-    // Create a heading element for champion name
-    const nameHeading = document.createElement('h2');
-    nameHeading.textContent = championClass.name;
-    
-    // Create a paragraph element for champion traits
-    const traitsParagraph = document.createElement('p');
-    traitsParagraph.textContent = `${championClass.traits.join(', ')}`;
-    
-    // Append name, image, and traits to the champion box
-    championBox.appendChild(nameHeading);
-    championBox.appendChild(imageElement);
-    championBox.appendChild(traitsParagraph);
-
-    // Add click event listener to move champion to the first open hex
-    championBox.addEventListener('click', () => moveChampionToHex(championBox));
-
-    // Check if the parent node is a hex-cell before adding the contextmenu event listener
-    if (championBox.parentNode && championBox.parentNode.classList.contains('hex-cell')) {
-        championBox.addEventListener('contextmenu', removeChampionFromHex);
-        Array.from(championBox.children).forEach(child => {
-            if (child !== championBox.querySelector('.champion-image')) {
-                child.style.visibility = 'hidden';
-            }
-        });
-    }
-    
-    // Append the champion box to the list
-    championClassesList.appendChild(championBox);
-})
       
 function moveChampionToHex(championBox) {
     const hexBoard = document.getElementById('hexBoard');
@@ -268,6 +261,7 @@ function moveChampionToHex(championBox) {
     for (let i = 0; i < hexCells.length; i++) {
         if (hexCells[i].className!='hex-cell last'){
             if (!hexCells[i].hasChildNodes()) {
+                hexCells[i].style.cursor = "pointer"
                 hexCells[i].style.backgroundImage = `url('${championImageSrc}')`
                 hexCells[i].style.backgroundSize = 'cover';
                 hexCells[i].style.backgroundPosition = 'center';
@@ -285,7 +279,7 @@ function moveChampionToHex(championBox) {
                     if(!headlinerList.firstChild){
                         displayHeadliner();
                     }
-                    else if(headlinerList.firstChild.className == "champion-box"){
+                    else if(headlinerList.firstChild.className !== "headliner-info-container"){
                         displayHeadliner();
                     }
                     else{
@@ -299,6 +293,7 @@ function moveChampionToHex(championBox) {
 function removeChampionFromHex(event) {
     event.preventDefault();
     const hexCell = event.currentTarget;
+    hexCell.style.cursor = null;
       
     // Check if the hex contains a champion
     if (hexCell.hasChildNodes()) {
@@ -316,10 +311,10 @@ function removeChampionFromHex(event) {
         }
         if (championClass == headlinerChampion){
             setHeadliner(null,null);
-            displayHeadliner()
         }
         updateTraitsColumn();
         recommendChampions();
+        displayHeadliner()
         }
 }
 function updateTraitCounts(traits, decrease) {
@@ -451,9 +446,6 @@ function recommendChampions() {
         }
     }
     if (!recommendationsList.firstChild){
-        console.log("IM EMPTY")
-        console.log(recommendationsList.firstChild);
-
         recommendationsList.innerHTML = '<div class= "recommendationsPlaceholder" >Champions will be recommended here depending on what your team needs</div>';
     }
 }
@@ -494,7 +486,6 @@ function isChampionInHex(championName) {
 function displayHeadliner() {
     const championNames = championClasses.map(champion => champion.name);
     const uniqueChampionsList = championNames.filter(championName => isChampionInHex(championName));
-    console.log(uniqueChampionsList);
     const headliner = document.getElementById('headlinerList');
 
     // Clear existing content
@@ -529,9 +520,14 @@ function displayHeadliner() {
         championBox.appendChild(nameHeading);
         championBox.appendChild(imageElement);
         championBox.appendChild(traitsParagraph);
+        championBox.classList.add(`cost-${championClass.cost}`)
         headliner.appendChild(championBox);
     });
     const headlinerContainer = document.getElementById('headlinerContainer');
+    if (!headliner.firstChild){
+        console.log("empty")
+        headliner.innerHTML = '<div class = "headliner-placeholder">Add units to the board to designated one as your headliner</div>'
+    }
     headlinerContainer.style.overflowY="scroll";
 }
 
@@ -610,7 +606,134 @@ function setHeadliner(trait,champion){
     updateTraitsColumn();
     recommendChampions();
 }
+function createChampionBox(championClass){
+    const championBox = document.createElement('div');
+        championBox.classList.add('champion-box');
+        
+        // Create an image element for the champion
+        const imageElement = document.createElement('img');
+        imageElement.classList.add("championImage");
+        imageElement.src = `images/${championClass.name}.png`; // Adjust the path
+        
+        // Create a heading element for champion name
+        const nameHeading = document.createElement('h2');
+        nameHeading.textContent = championClass.name;
+        
+        // Create a paragraph element for champion traits
+        const traitsParagraph = document.createElement('p');
+        traitsParagraph.textContent = `${championClass.traits.join(', ')}`;
+    
+        const cost = document.createElement('span');
+        cost.textContent = `${championClass.cost}`;
+        
+        // Append name, image, and traits to the champion box
+        championBox.appendChild(nameHeading);
+        championBox.appendChild(imageElement);
+        championBox.appendChild(traitsParagraph);
+        championBox.appendChild(cost);
+        championBox.addEventListener('click', () => moveChampionToHex(championBox));
+        if (championBox.parentNode && championBox.parentNode.classList.contains('hex-cell')) {
+            championBox.addEventListener('contextmenu', removeChampionFromHex);
+            Array.from(championBox.children).forEach(child => {
+                if (child !== championBox.querySelector('.champion-image')) {
+                    child.style.visibility = 'hidden';
+                }
+            });
+        }
+        championBox.classList.add(`cost-${championClass.cost}`)
+        // Append the champion box to the list
+        return championBox;
+}
+function orderByName(){
+    championClasses.sort((a, b) => a.name.localeCompare(b.name));
+    championClassesList.innerHTML = '';
+
+    championClasses.forEach((championClass) => {
+        const championBox = createChampionBox(championClass)
+        championClassesList.appendChild(championBox);
+    })
+
+}
+function orderByCost(){
+    championClasses.sort((a, b) => a.cost - b.cost);
+    championClassesList.innerHTML = '';
+
+    championClasses.forEach((championClass) => {
+        const championBox = createChampionBox(championClass)
+        championClassesList.appendChild(championBox);
+    })
+}
+function orderByClass() {
+    championClasses.sort((a, b) => a.cost - b.cost);
+    championClassesList.innerHTML = '';
+
+    let start = false;  // Flag to start processing after 'Big-Shot'
+
+    for (const traitName in traitGoals) {
+        if (start) {
+            // Create a line to display the trait name
+            const traitLine = document.createElement('div');
+            traitLine.classList.add("champion-traitline");
+            traitLine.textContent = `Trait: ${traitName}`;
+            championClassesList.appendChild(traitLine);
+
+            championClasses.forEach((championClass) => {
+                // Check if the champion has the current trait
+                if (championClass.traits.includes(traitName)) {
+                    // Display the champion
+                    const championBox = createChampionBox(championClass)
+                    championClassesList.appendChild(championBox);
+                }
+            });
+        }
+
+        if (traitName === 'Wildcard') {
+            start = true;
+        }
+    }
+}
+function orderByOrigin(){
+    championClasses.sort((a, b) => a.cost - b.cost);
+    championClassesList.innerHTML = '';
+    for (const traitName in traitGoals) {
+        if (traitName === 'Big-Shot') {
+            break;
+        }
+        // Create a line to display the trait name
+        const traitLine = document.createElement('div');
+        traitLine.classList.add("champion-traitline");
+
+        traitLine.textContent = `Trait: ${traitName}`;
 
 
+        championClassesList.appendChild(traitLine);
+        championClasses.forEach((championClass) => {
+            // Check if the champion has the current trait
+            if (championClass.traits.includes(traitName)) {
+                // Display the champion
+                const championBox = createChampionBox(championClass)
+                championClassesList.appendChild(championBox);
+            }
+        })
+    }
+}
+// Add click event listener to all divs with the class 'filter'
+const filters = document.querySelectorAll('.filter');
+filters.forEach(div => {
+    div.addEventListener('click', function () {
+        highlightDiv(div);
+    });
+});
+
+// Function to highlight the clicked div and unhighlight the others
+function highlightDiv(clickedDiv) {
+    // Remove 'highlight' class from all divs
+    filters.forEach(div => {
+        div.classList.remove('highlight');
+    });
+
+    // Add 'highlight' class to the clicked div
+    clickedDiv.classList.add('highlight');
+}
 
 });

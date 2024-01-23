@@ -1,6 +1,5 @@
 ::-webkit-scrollbar{
   width: 1em;
-  background: #303030;
 }
 ::-webkit-scrollbar-corner {
   background-color: transparent;
@@ -85,6 +84,7 @@
     flex-direction: column;
     align-items: center;
     background-image: url("images/Background.jpg");
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -121,7 +121,6 @@
   .hex-cell.last {
     visibility: hidden; /* Hide the last hexagonal cell in the first row */
   }
-
   /*Trait styles*/
   .traits-column-container{
     display: flex;
@@ -141,6 +140,7 @@
   }
   .traitsPlaceholder{
     text-align: center;
+    padding: 1em;
   }
 
   .trait {
@@ -214,6 +214,7 @@
   }
   .recommendationsPlaceholder{
     text-align: center;
+    padding: 1em;
   }
   .recommendationsList {
     display: flex;
@@ -238,10 +239,41 @@
     width: 50%;
     height: 40vh;
     justify-content: left;
-    overflow-y: scroll;
     background-color: #0D2B50;
     margin-top: 50px;
-    padding: 5px 0px 5px 50px;
+    padding: 0px 0px 5px 50px;
+  }
+  .champions-list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 35vh;
+    justify-content: left;
+    overflow-y: scroll;
+    background-color: #0D2B50;
+  }
+  .champions-filter{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    color: white;
+    padding-right: 2rem;
+  }
+  .filter{
+    cursor: pointer;
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .filter.highlight{
+    color: #52A9FF;
+    border-bottom: 1px solid #52A9FF;
+  }
+  .champion-traitline{
+    width: 100%;
+    align-items: right;
+    background-color: #103a6d;
+    color: white;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
   }
   .champion-box {
     position: relative;
@@ -276,6 +308,21 @@
     margin: 0;
     color: #ffffff;
   }
+  .champion-box.cost-1{
+    border: 3px solid #848999;
+  }
+  .champion-box.cost-2{
+    border: 3px solid #11B288;
+  }
+  .champion-box.cost-3{
+    border: 3px solid #207AC7;
+  }
+  .champion-box.cost-4{
+    border: 3px solid #9B39AB;
+  }
+  .champion-box.cost-5{
+    border: 3px solid #FFB93B;
+  }
   .champion-box.hex{
     height: 60px;
     width: 60px;
@@ -292,6 +339,9 @@
   .champion-box.hex img{
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .champion-box.hex span{
+    font-size: 0%;
   }
 
   /*headliner styles*/
@@ -326,6 +376,12 @@
     max-width: 100%;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .headliner-placeholder{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 1em;
   }
   .headliner-image{
     width: 50%;
