@@ -60,7 +60,6 @@ const championClasses = [
     { name: 'Zac', traits: ['EDM', 'Bruiser' ],cost: "4" },
     { name: 'Zed', traits: ['EDM', 'Crowd-Diver'],cost: "4" },
     { name: 'Ziggs', traits: ['Hyperpop', 'Dazzler'],cost: "5" },
-    // Add more champion classes as needed
 ];
 
 const traitGoals = {
@@ -106,6 +105,8 @@ let headlinerChampion = null;
 // Display champion classes on the webpage
 const championClassesList = document.getElementById('championList');  
 orderByName()
+
+// Display champion filters
 const filterBar = document.getElementById("champions-filter");
 
 const nameFilter = document.createElement('div');
@@ -113,7 +114,6 @@ nameFilter.classList.add("filter")
 nameFilter.classList.add("highlight")
 nameFilter.innerText = "Name"
 nameFilter.addEventListener('click', () => orderByName());
-
 
 const costFilter = document.createElement('div');
 costFilter.classList.add("filter")
@@ -134,6 +134,25 @@ filterBar.appendChild(nameFilter)
 filterBar.appendChild(costFilter)
 filterBar.appendChild(originFilter)
 filterBar.appendChild(classFilter)
+
+// Add click event listener to all divs with the class 'filter'
+const filters = document.querySelectorAll('.filter');
+filters.forEach(div => {
+    div.addEventListener('click', function () {
+        highlightDiv(div);
+    });
+});
+
+// Function to highlight the clicked div and unhighlight the others
+function highlightDiv(clickedDiv) {
+    // Remove 'highlight' class from all divs
+    filters.forEach(div => {
+        div.classList.remove('highlight');
+    });
+
+    // Add 'highlight' class to the clicked div
+    clickedDiv.classList.add('highlight');
+}
 
 const hexBoard = document.getElementById('hexBoard');
 
@@ -246,16 +265,21 @@ function moveChampionToHex(championBox) {
     let isChampionAlreadyPresent = false;
     const championImageSrc = championBox.querySelector('img').src;
     const headlinerList = document.getElementById('headlinerList');
+    
 
-    // Check if the champion is already present in the hex board
+    // Create cloned node
     const clonedChampionBox = championBox.cloneNode(true);
+    const championName = clonedChampionBox.querySelector('h2').textContent;
     clonedChampionBox.classList.add("hex");
     clonedChampionBox.style.visibility = 'hidden'; // Make the cloned node invisible
-    Array.from(hexCells).forEach(hexCell => {
-        if (hexCell.firstChild && hexCell.firstChild.isEqualNode(clonedChampionBox)) {
+
+    // Check if the champion is already present in the hex board
+    for (let i = 0; i < hexCells.length; i++) {
+        if (hexCells[i].firstChild && hexCells[i].firstChild.querySelector('h2').textContent==championName){
             isChampionAlreadyPresent = true;
+            break;
         }
-    });
+    }
         
     // Find the first open hexagonal cell
     for (let i = 0; i < hexCells.length; i++) {
@@ -289,6 +313,31 @@ function moveChampionToHex(championBox) {
             }
           }
         }
+
+    
+    //special case for illaoi
+    if (championName=="Illaoi" && !isChampionAlreadyPresent){
+        for (let i = 0; i < 2; i++) {
+            for (let i = 0; i < hexCells.length; i++) {
+                if (hexCells[i].className!='hex-cell last'){
+                    if (!hexCells[i].hasChildNodes()) {
+                        hexCells[i].style.cursor = "pointer"
+                        hexCells[i].style.backgroundImage = "url(images/tentacle.png)";
+                        hexCells[i].style.backgroundSize = 'cover';
+                        hexCells[i].style.backgroundPosition = 'center';
+                        hexCells[i].addEventListener('contextmenu', removeChampionFromHex);
+                        
+                        const tentaclebox = createChampionBox({ name: 'tentacle', traits: ['none'],cost: "1" })
+                        tentaclebox.classList.add("hex")
+                        tentaclebox.style.visibility = 'hidden'; // Make the cloned node invisible
+                        hexCells[i].replaceChildren(tentaclebox);
+    
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 function removeChampionFromHex(event) {
     event.preventDefault();
@@ -311,6 +360,21 @@ function removeChampionFromHex(event) {
         }
         if (championClass == headlinerChampion){
             setHeadliner(null,null);
+        }
+        if (championClass == 'Illaoi'&& isLastChampionOfItsClass(championClass)){
+            console.log("removing illaoi")
+            const hexBoard = document.getElementById('hexBoard');
+            const hexCells = hexBoard.getElementsByClassName('hex-cell');
+            for (let i = 0; i < hexCells.length; i++) {
+                if (hexCells[i].hasChildNodes()) {
+                    if(hexCells[i].firstChild.querySelector('h2').textContent=='tentacle'){
+                        hexCells[i].style.cursor = null
+                        hexCells[i].style.backgroundImage = null;
+                        
+                        hexCells[i].removeChild(hexCells[i].firstChild);
+                    }
+                }
+            }
         }
         updateTraitsColumn();
         recommendChampions();
@@ -525,7 +589,6 @@ function displayHeadliner() {
     });
     const headlinerContainer = document.getElementById('headlinerContainer');
     if (!headliner.firstChild){
-        console.log("empty")
         headliner.innerHTML = '<div class = "headliner-placeholder">Add units to the board to designated one as your headliner</div>'
     }
     headlinerContainer.style.overflowY="scroll";
@@ -539,6 +602,7 @@ function removeChampionBox(championName) {
         if (championBoxToRemove) {
             headlinerList.removeChild(championBoxToRemove);
         }
+
 }
 
 function displayHeadlinerInfo(championClass) {
@@ -716,24 +780,6 @@ function orderByOrigin(){
             }
         })
     }
-}
-// Add click event listener to all divs with the class 'filter'
-const filters = document.querySelectorAll('.filter');
-filters.forEach(div => {
-    div.addEventListener('click', function () {
-        highlightDiv(div);
-    });
-});
-
-// Function to highlight the clicked div and unhighlight the others
-function highlightDiv(clickedDiv) {
-    // Remove 'highlight' class from all divs
-    filters.forEach(div => {
-        div.classList.remove('highlight');
-    });
-
-    // Add 'highlight' class to the clicked div
-    clickedDiv.classList.add('highlight');
 }
 
 });
