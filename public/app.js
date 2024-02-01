@@ -360,6 +360,7 @@ function removeChampionFromHex(event) {
         }
         if (championClass == headlinerChampion){
             setHeadliner(null,null);
+            displayHeadliner()
         }
         if (championClass == 'Illaoi'&& isLastChampionOfItsClass(championClass)){
             console.log("removing illaoi")
@@ -378,7 +379,6 @@ function removeChampionFromHex(event) {
         }
         updateTraitsColumn();
         recommendChampions();
-        displayHeadliner()
         }
 }
 function updateTraitCounts(traits, decrease) {
